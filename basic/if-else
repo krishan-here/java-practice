@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+class Main {
+
+  static int add(int a, int b) {
+    return a + b;
+  }
+
+  static int subtract(int a, int b) {
+    return a - b;
+  }
+
+  static int multiply(int a, int b) {
+    return a * b;
+  }
+
+  static int division(int a, int b) {
+    return a / b;
+  }
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    boolean running = true;
+
+    while (running) {
+      System.out.println("Choose one option");
+      System.out.println("1. Addition");
+      System.out.println("2. Substraction");
+      System.out.println("3. Multiplication");
+      System.out.println("4. Division");
+      System.out.println("5. Exit");
+
+      int choice = scanner.nextInt();
+      if (choice == 5) {
+        running = false;
+        continue;
+      }
+      System.out.println("Enter two values");
+      int a = scanner.nextInt();
+      int b = scanner.nextInt();
+      int result = 0;
+
+      if (choice == 1) {
+        result = add(a, b);
+      } else if (choice == 2) {
+        result = subtract(a, b);
+      } else if (choice == 3) {
+        result = multiply(a, b);
+      } else if (choice == 4) {
+        result = division(a, b);
+      } else {
+        System.out.println("Invalid choice");
+      }
+
+      if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+        System.out.println("The result is " + result);
+      }
+
+    }
+
+    scanner.close();
+
+  }
+}
